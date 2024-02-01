@@ -26,3 +26,11 @@ flights %>%
 flights %>%
   select(distance) %>%
   arrange(distance,distance)
+
+#Q4
+flights %>%
+  filter(month == 9,year == 2013) %>%
+  count(carrier) %>%
+  arrange(desc(n)) %>%
+  head(5) %>%
+  left_join(airlines)
